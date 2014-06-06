@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>MongoDB para iniciantes</title>
+    <meta name="viewport" content="width=1024" />
+    <link href="bower_components/impress.js/css/impress-demo.css" rel="stylesheet" />
+    <style>
+     .step {transition: color 1s; width: 900px; color: white;}
+     .past, .future {color: #233D09; }
+     .past.active {color: white;}
+     body {background: radial-gradient(rgb(26, 30, 22), rgb(46, 52, 54)); min-height: 740px; -webkit-font-smoothing: antialiased; font-size: 48px;}
+     table {width: 100%; font-size: 36px;}
+     table td, table th {border: 1px solid white; padding: 10px;}
+
+     .past table td, .past table th,
+     .future table td, .future table th {border: 1px solid #233D09;;}
+     pre {font-size: 36px;}
+    </style>
+  </head>
+  <body>
+    <div id="impress">
+      <div id="apresentacao" class="step" data-scale="40">
+        <h1 style="text-align: center; font-size: 56px; padding-top: 50px;">MongoDB para iniciantes</h1>
+
+        <p class="hint">
+          Versão: 0.1.0
+        </p>
+        
+        <p style="margin: 50px auto; text-align: center;">
+          Professor: Wilson Pinto Júnior
+        </p>
+      </div>
+
+      <div id="Author" class="step"  data-scale="200" data-z="1000" data-x="200" data-y="1500" data-rotate="60">
+        <b>Wilson Júnior</b>
+        <i>Software Enginner</i> na Lethus TI, <b>Apaixonado</b> por Tecnologia, Software Livre e Afins.
+
+      </div> 
+      <div id="o-que-e" class="step" data-x="600" data-y="1800" data-rotate="180">
+        <b>O que é o MongoDB ?</b>
+        <br/>
+        <q>Um Banco de Dados <b>NoSQL</b>, de alta performance, Sem esquemas, <b>Orientado a documentos</b>. Desenvolvido pela <b>10gen</b>, e hoje é o <b>maior</b> banco de dados NoSQL do Mundo</q>
+      </div>
+
+      <div id="no-sql" class="step" data-scale="10" data-z="-1500">
+        <b>NoSQL ?, que termo é esse ?</b>
+
+        <q>NoSQL (not-only-sql), é um termo genérico para uma classe de Banco de Dados Não Relacionais que rompe a longa história de banco de dados relacionais com propiedades ACID ... (wikipédia)</q>
+      </div>
+
+      <div id="outros-bancos" class="step" data-rotate="45" data-x="4000" data-y="2000">
+        <b>Principais Bancos de Dados NoSQL</b>
+        <ul>
+          <li>MongoDB</li>
+          <li>CouchDB</li>
+          <li>Db4o</li>
+          <li>Redis</li>
+          <li>Cassandra</li>
+          <li>HBase</li>
+          <li>Neo4j</li>
+        </ul>
+      </div>
+
+      <div id="vantagens-nosql" class="step">
+        <b>Principais vantagens de se utilizar NoSQL</b>
+        <ul>
+          <li>Escalabilidade horizontal</li>
+          <li>Performance</li>
+          <li>Sem esquemas</li>
+          <li>Processamento de informações com <b>Map/Reduce</b></li>
+        </ul>
+      </div>
+
+
+      <div id="maos-a-massa" class="step" data-rotate="45" data-z="-50" data-y="500" data-scale="5">
+        <big style="font-size: 96px;">Vamos ao Trabalho!</big>
+      </div>
+
+      <div id="download-mongo" class="step" data-rotate-y="10"  data-z="800">
+        <b>Download do MongoDB</b>
+        <a href="http://www.mongodb.org/downloads" target="_blank">http://www.mongodb.org/downloads</a>
+      </div>
+
+      <div id="termos" class="step" data-scale="2" data-y="5000" data-x="500" data-z="500">
+        <b>Comparação dos Termos MongoDB vs SQL</b>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>SQL</th>
+              <th>MongoDB</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tabela</td>
+              <td>Coleção</td>
+            </tr>
+            <tr>
+              <td>Linha</td>
+              <td>Documento</td>
+            </tr>
+            <tr>
+              <td>Coluna</td>
+              <td>Campo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="tipos-de-dados" class="step" data-rotate-z="-150" data-y="15" data-scale="15">
+        <b>Tipos básicos de dados</b>
+
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Tipo</th>
+              <th>Exemplo</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Double</td>
+              <td>3.1415926</td>
+            </tr>
+            <tr>
+              <td>String</td>
+              <td>"Oi meu nome é Wilson"</td>
+            </tr>
+            <tr>
+              <td>Object</td>
+              <td>{"nome": "Wilson", "altura": 1.82}</td>
+            </tr>
+            <tr>
+              <td>Array</td>
+              <td>["legal", "alegre", "magro"]</td>
+            </tr>
+            <tr>
+              <td>Boolean</td>
+              <td>true ou false</td>
+            </tr>
+            <tr>
+              <td>Inteiro</td>
+              <td>10</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div id="tipo-de-dado-especial" class="step">
+        <p>Ainda temos o tipo de dado <b>ObjectId</b>
+          É formado por 24 caracteres hexadecimais, utilizado por padrão como chave primária de um documento.
+        </p>
+        <br />
+
+        Exemplo:
+        ObjectId("507c7f79bcf86cd7994f6c0e")
+
+      </div>
+
+      <div id="exemplo-documento" class="step">
+        <b>Exemplo de um Documento</b>
+        <pre>
+          {
+             "nome": "Wilson Júnior",
+             "idade": 21,
+             "altura": 1.82,
+             "vivo": true,
+             "qualidades": ["feioso", "chato"],
+             "academico": [
+                {"nome": "Analise de sistemas", "ano": 2012},
+                {"nome": "MBA em GP", "ano": 2014}
+             ]
+          }
+        </pre>
+      </div>
+    </div>
+    
+    <script src="bower_components/impress.js/js/impress.js"></script>
+    <script>impress().init();</script>
+  </body>
+</html>
